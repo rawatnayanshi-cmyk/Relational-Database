@@ -1,0 +1,64 @@
+CREATE DATABASE school_db;
+USE school_db;
+CREATE TABLE STUDENTS (
+    STUDENT_ID INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(20),
+    AGE INT,
+    GRADE VARCHAR(10),
+    ADMISSION_DATE DATE
+);
+INSERT INTO STUDENTS  (NAME,AGE,GRADE,ADMISSION_DATE)
+VALUES ("HIMANSHI",15,'10','2026-03-01'),
+		('RIYA',16,'11','2026-02-01'),
+        ('ABHISHEK',15,10,'2026-03-02'),
+        ('SIMRAN',16,11,'2026-02-01');
+        
+        
+SELECT 
+    *
+FROM
+    STUDENTS;
+
+-- FETCH STUDETNS IN GRADE 10
+SELECT 
+    NAME, AGE
+FROM
+    STUDENTS
+WHERE
+    GRADE = 10;
+
+-- FETCH STUDENTS OLDER THAN 15
+SELECT 
+    *
+FROM
+    STUDENTS
+WHERE
+    AGE > 15;
+
+-- UPDATE STUDENTS GRADE
+UPDATE STUDENTS 
+SET 
+    GRADE = 12
+WHERE
+    NAME = 'SIMRAN';
+
+SELECT COUNT(*) FROM students WHERE grade = '10';
+
+SELECT * FROM students ORDER BY age ASC;
+
+SELECT * FROM students LIMIT 2;
+
+SELECT * FROM students WHERE name LIKE 'S%';
+
+SELECT AVG(age) AS average_age FROM students;
+
+SELECT grade, COUNT(*) AS total_students
+FROM students
+GROUP BY grade;
+
+
+
+
+
+
+        
